@@ -1,0 +1,35 @@
+﻿@model List<Application.Models.Document>
+@{
+    ViewBag.Title = "List";
+    var member = ViewData["Member"] as Application.Models.Member;
+}
+
+<h2>List</h2>
+
+<div>
+    <p>
+        <!--@ViewBag.Member.Name 님 환영합니다.-->
+        @member.Name 님 환영합니다.
+    </p>
+    <table>
+        <thead>
+           <tr>
+               <th>이름</th>
+               <th>번호</th>
+               <th>주소</th>
+           </tr>
+        </thead>
+        
+        <tbody>
+           @foreach (var item in Model)
+           {
+               <tr>
+                   <td>@item.MyDocument_Number</td>
+                   <td>@item.Title</td>
+                   <td>@item.Writer</td>
+               </tr>
+           }
+        </tbody>
+    </table>
+</div>
+
